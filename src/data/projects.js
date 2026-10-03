@@ -1,6 +1,8 @@
 import hallsyncImage from '../assets/projects/hallsync.JPG'
 import bearistaImage from '../assets/projects/bearista.svg'
 import hospitalImage from '../assets/projects/hospital.svg'
+import edupulseImage from '../assets/projects/edupulse.jpg'
+import edupulseImageTwo from '../assets/projects/edupulse2.jpg'
 
 export const featuredProject = {
   slug: 'hallsync',
@@ -32,6 +34,29 @@ export const featuredProject = {
 }
 
 export const projects = [
+  {
+    slug: 'edupulse',
+    title: 'EduPulse',
+    subtitle: 'Education management web app',
+    image: edupulseImage,
+    images: [edupulseImage, edupulseImageTwo],
+    alt: 'EduPulse education management app screenshot',
+    summary:
+      'An education management web app built with FastAPI and Vite to bring essential academic workflows into one focused experience.',
+    problem:
+      'Education workflows can become fragmented when users need to move between separate tools for information, management, and day-to-day academic tasks.',
+    solution:
+      'EduPulse combines a FastAPI backend with a Vite frontend to provide a clear, responsive interface for managing education-focused workflows.',
+    contribution:
+      'I worked across the frontend and backend, connecting the Vite interface to FastAPI services and shaping the main user experience.',
+    tech: ['FastAPI', 'Vite', 'React', 'Docker'],
+    features: ['Responsive web interface', 'FastAPI backend services', 'Education workflow management', 'Frontend and API integration'],
+    live: null,
+    github: null,
+    caseStudy: null,
+    learnings:
+      'The project strengthened my understanding of connecting a modern frontend to a Python API while keeping the product experience simple and usable.',
+  },
   {
     slug: 'bearista-shop',
     title: 'Bearista Shop',

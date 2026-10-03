@@ -5,6 +5,7 @@ import Reveal from './Reveal'
 function ProjectCard({ project, featured = false, index = 0 }) {
   const actionClass =
     'focus-ring inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition duration-200'
+  const projectImages = project.images ?? [project.image]
 
   return (
     <Reveal delay={index * 0.06}>
@@ -13,8 +14,19 @@ function ProjectCard({ project, featured = false, index = 0 }) {
           featured ? 'lg:grid lg:grid-cols-[1.05fr_0.95fr]' : 'flex h-full flex-col'
         }`}
       >
-        <div className={`relative ${featured ? 'min-h-[240px] lg:min-h-full' : 'min-h-[210px]'}`}>
-          <img src={project.image} alt={project.alt} className="h-full w-full object-cover" />
+        <div
+          className={`relative grid ${projectImages.length > 1 ? 'grid-cols-2' : ''} ${
+            featured ? 'min-h-[240px] lg:min-h-full' : 'min-h-[210px]'
+          }`}
+        >
+          {projectImages.map((image, imageIndex) => (
+            <img
+              key={image}
+              src={image}
+              alt={`${project.alt}${imageIndex > 0 ? ` ${imageIndex + 1}` : ''}`}
+              className="h-full min-h-[210px] w-full object-cover"
+            />
+          ))}
           <div className="absolute inset-0 bg-gradient-to-tr from-slate-950/20 via-transparent to-white/20" />
         </div>
 
